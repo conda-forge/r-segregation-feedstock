@@ -1,7 +1,3 @@
-<!--
-# -*- mode: jinja -*-
--->
-
 About r-segregation
 ===================
 
@@ -18,8 +14,15 @@ Summary: Computes entropy-based segregation indices, as developed by Theil (1971
 Current build status
 ====================
 
-All platforms:
-[![noarch](https://img.shields.io/circleci/project/github/conda-forge/r-segregation-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/r-segregation-feedstock)
+
+<table><tr><td>All platforms:</td>
+    <td>
+      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5781&branchName=master">
+        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-segregation-feedstock?branchName=master">
+      </a>
+    </td>
+  </tr>
+</table>
 
 Current release info
 ====================
@@ -116,6 +119,7 @@ Feedstock Maintainers
 * [@apcamargo](https://github.com/apcamargo/)
 * [@bgruening](https://github.com/bgruening/)
 * [@cbrueffer](https://github.com/cbrueffer/)
+* [@conda-forge/r](https://github.com/conda-forge/r/)
 * [@daler](https://github.com/daler/)
 * [@dbast](https://github.com/dbast/)
 * [@jdblischak](https://github.com/jdblischak/)
