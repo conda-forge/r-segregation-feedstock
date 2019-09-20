@@ -17,13 +17,11 @@ build:
   noarch: generic
   merge_build_host: True  # [win]
   number: 0
-  noarch: generic
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
-  build:
   host:
     - r-base
     - r-data.table
@@ -51,10 +49,4 @@ about:
 extra:
   recipe-maintainers:
     - conda-forge/r
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
-    - cbrueffer
-    - dbast
     - apcamargo
