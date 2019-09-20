@@ -1,4 +1,4 @@
-{% set version = "0.2.0" %}
+{% set version = "0.3.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -11,19 +11,17 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/segregation_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/segregation/segregation_{{ version }}.tar.gz
-  sha256: 2ccab89532f34e39f76c71b0c57bbb03fec482a02972f4c05f7329e346cac453
+  sha256: 13a178ae1af60a569f323b332233e5fb134c98140be857e63e7dc6059be0a32f
 
 build:
   noarch: generic
   merge_build_host: True  # [win]
-  number: 1
-  noarch: generic
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
-  build:
   host:
     - r-base
     - r-data.table
@@ -39,6 +37,7 @@ test:
 about:
   home: http://github.com/elbersb/segregation
   license: MIT
+  license_file: LICENSE
   summary: Computes entropy-based segregation indices, as developed by Theil (1971) <isbn:978-0471858454>,
     with a focus on  the Mutual Information Index (M) and Theil's Information Index
     (H).  The M, further described by Mora and Ruiz-Castillo (2011) <doi:10.1111/j.1467-9531.2011.01237.x>
@@ -51,10 +50,4 @@ about:
 extra:
   recipe-maintainers:
     - conda-forge/r
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
-    - cbrueffer
-    - dbast
     - apcamargo
