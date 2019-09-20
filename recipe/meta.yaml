@@ -1,4 +1,4 @@
-{% set version = "0.2.0" %}
+{% set version = "0.3.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -11,12 +11,12 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/segregation_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/segregation/segregation_{{ version }}.tar.gz
-  sha256: 2ccab89532f34e39f76c71b0c57bbb03fec482a02972f4c05f7329e346cac453
+  sha256: 13a178ae1af60a569f323b332233e5fb134c98140be857e63e7dc6059be0a32f
 
 build:
   noarch: generic
   merge_build_host: True  # [win]
-  number: 1
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
