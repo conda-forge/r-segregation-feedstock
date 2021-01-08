@@ -1,4 +1,4 @@
-{% set version = "0.3.0" %}
+{% set version = "0.4.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -11,12 +11,12 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/segregation_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/segregation/segregation_{{ version }}.tar.gz
-  sha256: 13a178ae1af60a569f323b332233e5fb134c98140be857e63e7dc6059be0a32f
+  sha256: 47e425115caa5f7d2e64ce20bc34955e815198d4dca58ebdc345b04dff78c6ae
 
 build:
   noarch: generic
-  merge_build_host: True  # [win]
-  number: 1
+  merge_build_host: true  # [win]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -38,13 +38,8 @@ about:
   home: http://github.com/elbersb/segregation
   license: MIT
   license_file: LICENSE
-  summary: Computes entropy-based segregation indices, as developed by Theil (1971) <isbn:978-0471858454>,
-    with a focus on  the Mutual Information Index (M) and Theil's Information Index
-    (H).  The M, further described by Mora and Ruiz-Castillo (2011) <doi:10.1111/j.1467-9531.2011.01237.x>
-    and Frankel and Volij (2011) <doi:10.1016/j.jet.2010.10.008>,  is a measure of segregation
-    that is highly decomposable. The package provides tools to decompose the index by
-    units and groups (local segregation),  and by within and between terms. Includes
-    standard error estimation by bootstrapping.
+  summary: Computes entropy-based segregation indices, as developed by Theil (1971) <isbn:978-0471858454>, with a focus on  the Mutual Information Index (M) and Theil's Information Index (H).  The M, further described by Mora and Ruiz-Castillo (2011) <doi:10.1111/j.1467-9531.2011.01237.x> and Frankel and Volij (2011) <doi:10.1016/j.jet.2010.10.008>,  is
+    a measure of segregation that is highly decomposable. The package provides tools to decompose the index by units and groups (local segregation),  and by within and between terms. Includes standard error estimation by bootstrapping.
   license_family: MIT
 
 extra:
