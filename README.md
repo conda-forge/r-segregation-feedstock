@@ -1,11 +1,11 @@
-About r-segregation
-===================
+About r-segregation-feedstock
+=============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-segregation-feedstock/blob/main/LICENSE.txt)
 
 Home: http://github.com/elbersb/segregation
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-segregation-feedstock/blob/main/LICENSE.txt)
 
 Summary: Computes entropy-based segregation indices, as developed by Theil (1971) <isbn:978-0471858454>, with a focus on  the Mutual Information Index (M) and Theil's Information Index (H).  The M, further described by Mora and Ruiz-Castillo (2011) <doi:10.1111/j.1467-9531.2011.01237.x> and Frankel and Volij (2011) <doi:10.1016/j.jet.2010.10.008>,  is a measure of segregation that is highly decomposable. The package provides tools to decompose the index by units and groups (local segregation),  and by within and between terms. Includes standard error estimation by bootstrapping.
 
