@@ -7,26 +7,42 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: segregation_{{ version }}.tar.gz
   url:
     - {{ cran_mirror }}/src/contrib/segregation_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/segregation/segregation_{{ version }}.tar.gz
   sha256: eb25be1d0419579afd48888fbd89930b1d41c48e1add49efffd3c4acfc8c169c
 
 build:
-  noarch: generic
-  merge_build_host: true  # [win]
+  merge_build_host: True  # [win]
   number: 0
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
+  build:
+    - {{ compiler('c') }}              # [not win]
+    - {{ compiler('m2w64_c') }}        # [win]
+    - {{ compiler('cxx') }}            # [not win]
+    - {{ compiler('m2w64_cxx') }}      # [win]
+    - {{ posix }}filesystem        # [win]
+    - {{ posix }}make
+    - {{ posix }}sed               # [win]
+    - {{ posix }}coreutils         # [win]
+    - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
+    - r-rcpp
+    - r-rcppprogress
+    - r-checkmate
     - r-data.table
   run:
     - r-base
+    - {{ native }}gcc-libs         # [win]
+    - r-rcpp
+    - r-rcppprogress
+    - r-checkmate
     - r-data.table
 
 test:
@@ -35,12 +51,13 @@ test:
     - "\"%R%\" -e \"library('segregation')\""  # [win]
 
 about:
-  home: http://github.com/elbersb/segregation
+  home: https://elbersb.github.io/segregation/
   license: MIT
-  license_file: LICENSE
   summary: Computes entropy-based segregation indices, as developed by Theil (1971) <isbn:978-0471858454>, with a focus on  the Mutual Information Index (M) and Theil's Information Index (H).  The M, further described by Mora and Ruiz-Castillo (2011) <doi:10.1111/j.1467-9531.2011.01237.x> and Frankel and Volij (2011) <doi:10.1016/j.jet.2010.10.008>,  is
     a measure of segregation that is highly decomposable. The package provides tools to decompose the index by units and groups (local segregation),  and by within and between terms. Includes standard error estimation by bootstrapping.
   license_family: MIT
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/MIT
+    - LICENSE
 
 extra:
   recipe-maintainers:
