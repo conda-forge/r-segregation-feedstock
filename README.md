@@ -3,7 +3,20 @@ About r-segregation-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-segregation-feedstock/blob/main/LICENSE.txt)
 
-Home: http://github.com/elbersb/segregation
+
+About r-segregation
+-------------------
+
+Home: https://elbersb.github.io/segregation/
+
+Package license: MIT
+
+Summary: Computes entropy-based segregation indices, as developed by Theil (1971) <isbn:978-0471858454>, with a focus on  the Mutual Information Index (M) and Theil's Information Index (H).  The M, further described by Mora and Ruiz-Castillo (2011) <doi:10.1111/j.1467-9531.2011.01237.x> and Frankel and Volij (2011) <doi:10.1016/j.jet.2010.10.008>,  is a measure of segregation that is highly decomposable. The package provides tools to decompose the index by units and groups (local segregation),  and by within and between terms. Includes standard error estimation by bootstrapping.
+
+About r-segregation
+-------------------
+
+Home: https://elbersb.github.io/segregation/
 
 Package license: MIT
 
@@ -13,11 +26,58 @@ Current build status
 ====================
 
 
-<table><tr><td>All platforms:</td>
+<table>
+    
+  <tr>
+    <td>Azure</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5781&branchName=main">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-segregation-feedstock?branchName=main">
-      </a>
+      <details>
+        <summary>
+          <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5781&branchName=main">
+            <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-segregation-feedstock?branchName=main">
+          </a>
+        </summary>
+        <table>
+          <thead><tr><th>Variant</th><th>Status</th></tr></thead>
+          <tbody><tr>
+              <td>linux_64_r_base4.2</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5781&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-segregation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_r_base4.2" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_64_r_base4.3</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5781&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-segregation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_r_base4.3" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_r_base4.2</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5781&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-segregation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_r_base4.2" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_r_base4.3</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5781&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-segregation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_r_base4.3" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5781&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-segregation-feedstock?branchName=main&jobName=win&configuration=win%20win_64_" alt="variant">
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </details>
     </td>
   </tr>
 </table>
