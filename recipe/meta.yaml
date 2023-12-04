@@ -1,4 +1,4 @@
-{% set version = "0.6.0" %}
+{% set version = "1.0.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -7,26 +7,43 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: segregation_{{ version }}.tar.gz
   url:
     - {{ cran_mirror }}/src/contrib/segregation_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/segregation/segregation_{{ version }}.tar.gz
-  sha256: 7dc1b59853418ee2c89a216587d89a4882ef3677c5976c165d66cebcf25a5279
+  sha256: eb25be1d0419579afd48888fbd89930b1d41c48e1add49efffd3c4acfc8c169c
 
 build:
-  noarch: generic
-  merge_build_host: true  # [win]
-  number: 2
+  merge_build_host: True  # [win]
+  skip: true              # [win]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
+  build:
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
+    - {{ compiler('c') }}          # [not win]
+    - {{ compiler('m2w64_c') }}    # [win]
+    - {{ compiler('cxx') }}        # [not win]
+    - {{ compiler('m2w64_cxx') }}  # [win]
+    - {{ posix }}filesystem        # [win]
+    - {{ posix }}make
+    - {{ posix }}sed               # [win]
+    - {{ posix }}coreutils         # [win]
+    - {{ posix }}zip               # [win]
   host:
     - r-base
+    - r-rcpp
+    - r-rcppprogress
+    - r-checkmate
     - r-data.table
   run:
     - r-base
+    - {{ native }}gcc-libs         # [win]
+    - r-rcpp
+    - r-rcppprogress
+    - r-checkmate
     - r-data.table
 
 test:
@@ -35,12 +52,15 @@ test:
     - "\"%R%\" -e \"library('segregation')\""  # [win]
 
 about:
-  home: http://github.com/elbersb/segregation
+  home: https://elbersb.github.io/segregation/
+  dev_url: https://github.com/elbersb/segregation/
   license: MIT
-  license_file: LICENSE
   summary: Computes entropy-based segregation indices, as developed by Theil (1971) <isbn:978-0471858454>, with a focus on  the Mutual Information Index (M) and Theil's Information Index (H).  The M, further described by Mora and Ruiz-Castillo (2011) <doi:10.1111/j.1467-9531.2011.01237.x> and Frankel and Volij (2011) <doi:10.1016/j.jet.2010.10.008>,  is
     a measure of segregation that is highly decomposable. The package provides tools to decompose the index by units and groups (local segregation),  and by within and between terms. Includes standard error estimation by bootstrapping.
   license_family: MIT
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/MIT
+    - LICENSE
 
 extra:
   recipe-maintainers:
